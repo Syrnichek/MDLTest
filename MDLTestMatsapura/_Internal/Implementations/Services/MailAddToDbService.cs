@@ -5,7 +5,7 @@ namespace MDLTestMatsapura._Internal.Implementations.Services
 {
     internal class MailAddToDbService : IMailAddToDbService
     {
-        public Task MailAddToDb(MailModel mailModel, DateTime dateTime, IResult result)
+        public Task MailAddToDb(MailModel mailModel)
         {
             throw new NotImplementedException();
         }
