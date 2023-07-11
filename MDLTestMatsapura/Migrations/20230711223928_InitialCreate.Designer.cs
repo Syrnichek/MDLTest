@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MDLTestMatsapura.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230711162806_InitialCreate")]
+    [Migration("20230711223928_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace MDLTestMatsapura.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MDLTestMatsapura._Internal.Models.MailModel", b =>
+            modelBuilder.Entity("MDLTestMatsapura.Models.MailModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -34,18 +34,21 @@ namespace MDLTestMatsapura.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Body")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("FailedMessage")
+                        .HasColumnType("text");
+
                     b.Property<string[]>("Recipients")
-                        .IsRequired()
                         .HasColumnType("text[]");
 
+                    b.Property<string>("Result")
+                        .HasColumnType("text");
+
                     b.Property<string>("Subject")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");

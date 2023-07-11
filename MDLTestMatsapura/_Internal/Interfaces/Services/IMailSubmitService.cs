@@ -1,9 +1,10 @@
-﻿using MDLTestMatsapura._Internal.Models;
+﻿using MDLTestMatsapura.Models;
+using MDLTestMatsapura.Models.Requests;
 
 namespace MDLTestMatsapura._Internal.Interfaces.Services
 {
     internal interface IMailSubmitService
     {
-        public Task MailSubmit(MailModel mailModel);
+        public MailModel MailSubmit(MailRequest MailRequest);
     }
 }

@@ -18,10 +18,12 @@ namespace MDLTestMatsapura.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Subject = table.Column<string>(type: "text", nullable: false),
-                    Body = table.Column<string>(type: "text", nullable: false),
-                    Recipients = table.Column<string[]>(type: "text[]", nullable: false),
-                    DateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    Subject = table.Column<string>(type: "text", nullable: true),
+                    Body = table.Column<string>(type: "text", nullable: true),
+                    Recipients = table.Column<string[]>(type: "text[]", nullable: true),
+                    DateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Result = table.Column<string>(type: "text", nullable: true),
+                    FailedMessage = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

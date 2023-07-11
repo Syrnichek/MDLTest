@@ -1,6 +1,6 @@
-﻿namespace MDLTestMatsapura._Internal.Models.Requests
+﻿namespace MDLTestMatsapura.Models.Requests
 {
-    internal class MailRequest
+    public class MailRequest
     {
         public string Subject { get; set; }
 
