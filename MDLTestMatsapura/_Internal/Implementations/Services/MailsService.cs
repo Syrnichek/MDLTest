@@ -32,7 +32,14 @@ namespace MDLTestMatsapura._Internal.Implementations.Services
 
         public List<MailModel> MailsGet()
         {
-            throw new NotImplementedException();
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+            var options = optionsBuilder.Options;
+            
+            using (ApplicationContext applicationContext = new ApplicationContext(options))
+            {
+                IEnumerable<MailModel> mailsIEnumerable = applicationContext.Mails;
+                return mailsIEnumerable.ToList();
+            }
         }
     }
 }
